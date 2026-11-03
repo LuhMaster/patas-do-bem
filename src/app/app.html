@@ -1,0 +1,13 @@
+
+@if (router.url === '/' || router.url === '') {
+  <div class="pagina">
+    <app-cabecalho />
+    <app-lista-animais />
+  </div>
+} @else {
+  <router-outlet />
+}
+
+<footer class="rodape">
+  <p>© 2026 Patas do Bem — Proteção animal</p>
+</footer>

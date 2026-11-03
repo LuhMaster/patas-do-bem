@@ -1,0 +1,121 @@
+<main class="pagina-cadastro">
+  <section class="formulario-container">
+    <div class="titulo-pagina">
+      <h2>Cadastrar animal</h2>
+      <p>Preencha os dados abaixo para registrar um animal.</p>
+    </div>
+
+    <form #formAnimal="ngForm" (ngSubmit)="cadastrarAnimal(formAnimal)">
+      <div class="campo">
+        <label for="nome">Nome do animal *</label>
+        <input
+          id="nome"
+          name="nome"
+          type="text"
+          [(ngModel)]="animal.nome"
+          placeholder="Ex.: Bob ou Não identificado"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="especie">Espécie *</label>
+        <select id="especie" name="especie" [(ngModel)]="animal.especie" required>
+          <option value="" disabled>Selecione a espécie</option>
+          <option value="Cachorro(a)">Cachorro(a)</option>
+          <option value="Gato(a)">Gato(a)</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="situacao">Situação *</label>
+        <select id="situacao" name="situacao" [(ngModel)]="animal.situacao" required>
+          <option value="" disabled>Selecione a situação</option>
+          <option value="Perdido">Perdido</option>
+          <option value="Encontrado">Encontrado</option>
+          <option value="Adoção">Adoção</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="localizacao">Localização *</label>
+        <input
+          id="localizacao"
+          name="localizacao"
+          type="text"
+          [(ngModel)]="animal.localizacao"
+          placeholder="Ex.: Centro ou Jardim Europa"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="dataRegistro">Data do registro *</label>
+        <input
+          id="dataRegistro"
+          name="dataRegistro"
+          type="date"
+          [(ngModel)]="animal.dataRegistro"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="caracteristicas">Características *</label>
+        <input
+          id="caracteristicas"
+          name="caracteristicas"
+          type="text"
+          [(ngModel)]="animal.caracteristicas"
+          placeholder="Ex.: porte médio, pelagem caramelo"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="foto">Foto do animal (opcional)</label>
+
+        <input id="foto" type="file" accept="image/*" (change)="selecionarFoto($event)" />
+
+        <small>Escolha uma imagem de até 2 MB. A foto não é obrigatória.</small>
+
+        @if (animal.foto) {
+          <div class="previsualizacao">
+            <img [src]="animal.foto" alt="Prévia da foto do animal" width="120" />
+          </div>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="descricaoCaso">Descrição do caso</label>
+        <textarea
+          id="descricaoCaso"
+          name="descricaoCaso"
+          [(ngModel)]="animal.descricaoCaso"
+          placeholder="Conte mais sobre o animal e o caso..."
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="botoes">
+        <button type="button" class="botao-limpar" (click)="limparFormulario(formAnimal)">
+          Limpar
+        </button>
+
+        <button type="submit" class="botao-cadastrar">Cadastrar animal</button>
+      </div>
+
+      @if (mensagem) {
+        <p class="mensagem" role="status">
+          {{ mensagem }}
+        </p>
+      }
+      <div class="voltar-container">
+        <button type="button" class="botao-voltar" (click)="voltarParaInicio()">
+          Voltar à consulta pública
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

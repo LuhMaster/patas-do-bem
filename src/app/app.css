@@ -1,0 +1,23 @@
+.pagina {
+  min-height: 100vh;
+  background: #f4f7f2;
+  color: #26352b;
+  font-family: Arial, sans-serif;
+}
+
+.rodape {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.rodape p {
+  margin: 0;
+  font-size: 14px;
+}

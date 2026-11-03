@@ -1,0 +1,16 @@
+<header class="cabecalho">
+  <div class="identidade">
+    <img src="/images/logo.png" alt="Logo Patas do Bem" class="logo" />
+
+    <div class="textos">
+      <h1>Patas do Bem</h1>
+      <p>Encontre animais perdidos, encontrados e disponíveis para adoção.</p>
+    </div>
+  </div>
+
+  @if (autenticacaoService.estaLogado()) {
+    <button class="botao-voluntario" type="button" (click)="sair()">Sair</button>
+  } @else {
+    <button class="botao-voluntario" type="button" routerLink="/login">Área do voluntário</button>
+  }
+</header>

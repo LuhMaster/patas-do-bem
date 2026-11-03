@@ -1,0 +1,49 @@
+<main class="pagina-login">
+  <section class="login-container">
+    <div class="titulo-login">
+      <h2>Área do voluntário</h2>
+      <p>Entre para acessar as funções de gerenciamento dos animais da associação.</p>
+    </div>
+
+    <form #formLogin="ngForm" (ngSubmit)="entrar(formLogin)">
+      <div class="campo">
+        <label for="email">E-mail *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          [(ngModel)]="email"
+          placeholder="seuemail@exemplo.com"
+          autocomplete="username"
+          required
+          email
+        />
+      </div>
+
+      <div class="campo">
+        <label for="senha">Senha *</label>
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          [(ngModel)]="senha"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      <button class="botao-entrar" type="submit">Entrar</button>
+
+      @if (mensagem) {
+        <p class="mensagem" role="status">
+          {{ mensagem }}
+        </p>
+      }
+    </form>
+
+    <p class="texto-voltar">
+      <a routerLink="/">Voltar à consulta pública</a>
+    </p>
+  </section>
+</main>
