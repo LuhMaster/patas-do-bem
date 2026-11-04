@@ -129,3 +129,20 @@ input:focus-visible {
     padding: 0 12px;
   }
 }
+
+@media (max-width: 480px) {
+  .botoes-filtro {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .botoes-filtro button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 9px 2px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
