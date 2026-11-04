@@ -63,6 +63,9 @@ Esta versão corresponde ao protótipo frontend do projeto, desenvolvido como pa
 
    `http://localhost:4200/`
 
+   Link de visualização na vercel:
+   https://patas-do-bem-pink.vercel.app/
+
 ## Observações
 
 Esta versão é um protótipo frontend. O login é simulado e os dados dos animais não possuem persistência em banco de dados nesta versão.
