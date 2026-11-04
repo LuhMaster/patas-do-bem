@@ -1,0 +1,109 @@
+<div class="cartao-container">
+  <article class="animal">
+    @if (animal.foto) {
+      <img class="imagem-animal" [src]="animal.foto" [alt]="'Foto de ' + animal.nome" />
+    } @else {
+      <div class="sem-foto" role="img" aria-label="Animal sem foto cadastrada">
+        <span aria-hidden="true">🐾</span>
+        <small>Sem foto</small>
+      </div>
+    }
+
+    <div class="informacoes">
+      <h3>{{ animal.nome }}</h3>
+      <p><strong>Espécie:</strong> {{ animal.especie }}</p>
+      <p><strong>Localização:</strong>{{ animal.localizacao }}</p>
+
+      <div class="situacao">
+        <strong>Situação:</strong>
+        <span class="etiqueta" [ngClass]="classeSituacao">
+          {{ animal.situacao }}
+        </span>
+      </div>
+    </div>
+
+    
+<div class="acoes">
+  @if (autenticacaoService.estaLogado()) {
+    <button
+      type="button"
+      class="botao-detalhes"
+      (click)="iniciarEdicao()"
+      [disabled]="editando"
+    >
+      Editar
+    </button>
+
+    <button type="button" class="botao-detalhes" (click)="excluirAnimal()">
+      Excluir
+    </button>
+  }
+
+  <button
+    type="button"
+    class="botao-detalhes"
+    (click)="alternarDetalhes()"
+    [disabled]="editando"
+    [attr.aria-expanded]="mostrarDetalhes"
+  >
+    {{ mostrarDetalhes ? 'Ocultar detalhes' : 'Ver detalhes' }}
+  </button>
+</div>
+
+@if (mostrarDetalhes && !editando) {
+  <div class="detalhes">
+    <h4>Detalhes do animal</h4>
+    <p><strong>Código:</strong> {{ animal.id }}</p>
+    <p><strong>Características:</strong> {{ animal.caracteristicas }}</p>
+    <p><strong>Data do Registro:</strong> {{ animal.dataRegistro }}</p>
+    <p><strong>Descrição do caso:</strong> {{ animal.descricaoCaso }}</p>
+  </div>
+}
+
+@if (editando) {
+  <div class="formulario-edicao">
+    <h4>Editar animal</h4>
+
+    <label for="nome-animal">Nome</label>
+    <input id="nome-animal" type="text" [(ngModel)]="animalEditado.nome" />
+
+    <label for="especie-animal">Espécie</label>
+    <select id="especie-animal" [(ngModel)]="animalEditado.especie">
+      <option value="Cachorro(a)">Cachorro(a)</option>
+      <option value="Gato(a)">Gato(a)</option>
+      <option value="Outro">Outro</option>
+    </select>
+
+    <label for="situacao-animal">Situação</label>
+    <select id="situacao-animal" [(ngModel)]="animalEditado.situacao">
+      <option value="Perdido">Perdido</option>
+      <option value="Encontrado">Encontrado</option>
+      <option value="Adoção">Adoção</option>
+    </select>
+
+    <label for="localizacao-animal">Localização</label>
+    <input id="localizacao-animal" type="text" [(ngModel)]="animalEditado.localizacao" />
+
+    <label for="caracteristicas-animal">Características</label>
+    <textarea
+      id="caracteristicas-animal"
+      [(ngModel)]="animalEditado.caracteristicas"
+    ></textarea>
+
+    <label for="descricao-animal">Descrição do caso</label>
+    <textarea id="descricao-animal" [(ngModel)]="animalEditado.descricaoCaso"></textarea>
+
+    <div class="botoes-edicao">
+      <button type="button" class="botao-detalhes" (click)="salvarEdicao()">
+        Salvar alterações
+      </button>
+
+      <button type="button" class="botao-detalhes" (click)="cancelarEdicao()">
+        Cancelar
+      </button>
+    </div>
+  </div>
+}
+
+  </article>
+</div>

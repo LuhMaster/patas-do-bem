@@ -1,0 +1,45 @@
+<section class="lista-animais">
+  <div class="filtros-container">
+    <div class="campo-busca">
+      <label for="busca">Buscar animal</label>
+
+      <input
+        id="busca"
+        type="text"
+        name="busca"
+        [(ngModel)]="busca"
+        placeholder="Digite o nome ou localização..."
+      />
+    </div>
+
+    <div class="botoes-filtro">
+      <button type="button" (click)="filtrar('Todos')" [class.ativo]="filtroAtual === 'Todos'">
+        Todos
+      </button>
+
+      <button type="button" (click)="filtrar('Perdido')" [class.ativo]="filtroAtual === 'Perdido'">
+        Perdidos
+      </button>
+
+      <button
+        type="button"
+        (click)="filtrar('Encontrado')"
+        [class.ativo]="filtroAtual === 'Encontrado'"
+      >
+        Encontrados
+      </button>
+
+      <button type="button" (click)="filtrar('Adoção')" [class.ativo]="filtroAtual === 'Adoção'">
+        Adoção
+      </button>
+    </div>
+  </div>
+
+  <div class="resultado-animais">
+    @for (animal of animaisFiltrados; track animal.id) {
+      <app-cartao-animal [animal]="animal" />
+    } @empty {
+      <p class="mensagem-vazia">Nenhum animal encontrado. Tente alterar sua busca ou filtro.</p>
+    }
+  </div>
+</section>

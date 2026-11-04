@@ -1,0 +1,148 @@
+
+.conteudo {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  color: #26352b;
+}
+
+.resultado-animais {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  gap: 18px;
+  order: 2;
+}
+
+.mensagem-vazia {
+  padding: 25px;
+  text-align: center;
+  color: #666666;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #aab7ad;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+button {
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 6px;
+  background: gray;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1c4931;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #d18a20;
+  outline-offset: 3px;
+}
+
+.lista-animais {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+.filtros-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  order: 1;
+  gap: 12px;
+}
+
+.campo-busca label {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #286344;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+
+.campo-busca input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.botoes-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botoes-filtro button {
+  padding: 10px 16px;
+  border: 1px solid #286344;
+  border-radius: 20px;
+  background: white;
+  color: #286344;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.botoes-filtro button.ativo {
+  background: #286344;
+  color: white;
+}
+
+.botoes-filtro button:focus-visible,
+.campo-busca input:focus-visible {
+  outline: 3px solid #d18a20;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .resultado-animais {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-animais {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .botoes-filtro {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .botoes-filtro button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 9px 2px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
