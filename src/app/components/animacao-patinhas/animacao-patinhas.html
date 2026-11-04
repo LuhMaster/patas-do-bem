@@ -1,0 +1,30 @@
+
+<div class="camada-patinhas" aria-hidden="true">
+
+  @for (patinha of patinhas; track patinha.id) {
+    <div
+      class="par-patinhas"
+      [style.left.%]="patinha.x"
+      [style.top.%]="patinha.y"
+      [style.--rotacao]="patinha.rotacao + 'deg'"
+      [style.--duracao]="patinha.duracao + 's'"
+    >
+      <svg class="patinha patinha-1" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="66" rx="23" ry="20" fill="#789878"/>
+        <ellipse cx="23" cy="35" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="43" cy="23" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="64" cy="25" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="82" cy="42" rx="11" ry="15" fill="#789878"/>
+      </svg>
+
+      <svg class="patinha patinha-2" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="66" rx="23" ry="20" fill="#789878"/>
+        <ellipse cx="23" cy="35" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="43" cy="23" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="64" cy="25" rx="11" ry="15" fill="#789878"/>
+        <ellipse cx="82" cy="42" rx="11" ry="15" fill="#789878"/>
+      </svg>
+    </div>
+  }
+
+</div>

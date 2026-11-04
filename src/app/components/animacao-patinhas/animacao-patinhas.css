@@ -1,0 +1,88 @@
+.camada-patinhas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.par-patinhas {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  animation: caminhada var(--duracao) linear forwards;
+}
+
+@keyframes caminhada {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translate(0, -10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(0, -30px);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translate(0, -50px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(0, -70px);
+  }
+}
+
+.patinha {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.patinha:first-child {
+  transform: translateY(-8px) rotate(-15deg);
+}
+
+.patinha:last-child {
+  transform: translateY(8px) rotate(15deg);
+}
+
+.patinha-1 {
+  transform: translateY(-8px) rotate(-15deg);
+  animation: passo-1 0.6s ease-in-out infinite alternate;
+  
+}
+
+.patinha-2 {
+  transform: translateY(8px) rotate(15deg);
+  animation: passo-2 0.6s ease-in-out infinite alternate;
+
+}
+
+@keyframes passo-1 {
+  from {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-15px) rotate(0deg);
+  }
+}
+
+@keyframes passo-2 {
+  from {
+    transform: translateY(8px) rotate(0deg);
+  }
+  to {
+    transform: translateY(15px) rotate(0deg);
+  }
+}
