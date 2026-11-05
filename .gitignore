@@ -20,3 +20,29 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Ambiente virtual Python
+.venv/
+
+# Arquivos temporários Python
+__pycache__/
+*.pyc
+
+# Banco de dados local SQLite
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Banco de dados local
+*.db
+*.sqlite3
+
+# Testes e ferramentas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
