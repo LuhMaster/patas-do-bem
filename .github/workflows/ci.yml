@@ -26,7 +26,7 @@ jobs:
           cache: npm
 
       - name: Instalar dependências
-        run: npm ci
+        run: pip install -r backend/requirements.txt
 
       - name: Executar testes
         run: npm test -- --no-watch
