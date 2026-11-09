@@ -8,9 +8,9 @@ describe('Cabecalho', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-  imports: [Cabecalho],
-  providers: [provideRouter([])],
-}).compileComponents();
+      imports: [Cabecalho],
+      providers: [provideRouter([])],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Cabecalho);
     component = fixture.componentInstance;
