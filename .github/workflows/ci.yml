@@ -1,0 +1,54 @@
+
+name: CI - Patas do Bem
+
+on:
+  push:
+    branches:
+      - backend-python
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  frontend:
+    name: Testes e build Angular
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências Angular
+        run: npm ci
+
+      - name: Executar testes Angular
+        run: npm test -- --no-watch
+
+      - name: Gerar build Angular
+        run: npm run build
+
+  backend:
+    name: Testes Python
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Instalar dependências Python
+        run: pip install -r backend/requirements.txt
+
+      - name: Executar testes Python
+        run: python -m pytest -v

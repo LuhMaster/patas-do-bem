@@ -1,22 +1,25 @@
-# Dependências do Node.js
-node_modules/
-
-# Arquivos gerados pelo Angular
-dist/
-.angular/
-
-# Arquivos temporários
-*.log
-npm-debug.log*
-
-# Configurações locais
-.env
-.env.*
-
-# Sistema operacional
-.DS_Store
-Thumbs.db
-
-# Editor
+# Editores e IDEs
 .vscode/
 .idea/
+
+# Ambientes virtuais Python
+.venv/
+venv/
+
+# Arquivos temporários Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Bancos de dados locais
+*.db
+*.sqlite3
+
+# Testes e ferramentas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Relatórios de cobertura
+.coverage
+coverage/
