@@ -238,6 +238,36 @@
   padding-left: 8px;
 }
 
+.informacoes h3 {
+  font-size: calc(1.25rem * var(--escala-texto, 1));
+}
+
+.informacoes p,
+.situacao {
+  font-size: calc(1rem * var(--escala-texto, 1));
+}
+
+.etiqueta {
+  font-size: calc(0.75rem * var(--escala-texto, 1));
+}
+
+.detalhes h4,
+.formulario-edicao h4 {
+  font-size: calc(1rem * var(--escala-texto, 1));
+}
+
+.detalhes p,
+.formulario-edicao label {
+  font-size: calc(0.875rem * var(--escala-texto, 1));
+}
+
+.botao-detalhes {
+  font-size: calc(0.875rem * var(--escala-texto, 1));
+}
+
+.sem-foto small {
+  font-size: calc(0.75rem * var(--escala-texto, 1));
+}
 
 @media (max-width: 480px) {
 
@@ -320,3 +350,30 @@
   font-size: 11px;
   white-space: nowrap;
 }
+
+  .animal .informacoes h3 {
+    font-size: calc(16px * var(--escala-texto, 1));
+  }
+
+  .animal .informacoes p,
+  .animal .situacao {
+    font-size: calc(12px * var(--escala-texto, 1));
+  }
+
+  .animal .etiqueta {
+    font-size: calc(10px * var(--escala-texto, 1));
+  }
+
+  .animal .acoes .botao-detalhes {
+    font-size: calc(11px * var(--escala-texto, 1));
+  }
+
+  .animal .detalhes h4,
+  .animal .formulario-edicao h4 {
+    font-size: calc(16px * var(--escala-texto, 1));
+  }
+
+  .animal .detalhes p,
+  .animal .formulario-edicao label {
+    font-size: calc(14px * var(--escala-texto, 1));
+  }

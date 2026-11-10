@@ -23,3 +23,8 @@ __pycache__/
 # Relatórios de cobertura
 .coverage
 coverage/
+
+# Arquivos gerados pelo Angular
+.angular/
+dist/
+node_modules/

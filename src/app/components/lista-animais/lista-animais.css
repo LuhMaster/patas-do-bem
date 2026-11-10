@@ -120,6 +120,49 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
+.acessibilidade {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #26352b;
+  font-size: calc(14px * var(--escala-texto, 1));
+}
+
+.acessibilidade button {
+  min-width: 42px;
+  padding: 8px 12px;
+  border: 1px solid #286344;
+  border-radius: 6px;
+  background-color: white;
+  color: #286344;
+  font-size: calc(16px * var(--escala-texto, 1));
+  font-weight: 700;
+}
+
+.acessibilidade button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.campo-busca label {
+  font-size: calc(24px * var(--escala-texto, 1));
+}
+
+.campo-busca input {
+  font-size: calc(15px * var(--escala-texto, 1));
+}
+
+.botoes-filtro button {
+  font-size: calc(14px * var(--escala-texto, 1));
+}
+
+.mensagem-vazia {
+  font-size: calc(16px * var(--escala-texto, 1));
+}
+
+
 @media (max-width: 700px) {
   .resultado-animais {
     grid-template-columns: 1fr;

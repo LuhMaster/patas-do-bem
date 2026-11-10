@@ -1,4 +1,28 @@
-<section class="lista-animais">
+<section
+  class="lista-animais"
+  [style.--escala-texto]="escalaTexto"
+>
+  <div class="acessibilidade">
+  <span>Tamanho do texto:</span>
+
+  <button
+    type="button"
+    (click)="diminuirTexto()"
+    [disabled]="escalaTexto <= 0.8"
+    aria-label="Diminuir tamanho do texto"
+  >
+    A−
+  </button>
+
+  <button
+    type="button"
+    (click)="aumentarTexto()"
+    [disabled]="escalaTexto >= 1.5"
+    aria-label="Aumentar tamanho do texto"
+  >
+    A+
+  </button>
+</div>
   <div class="filtros-container">
     <div class="campo-busca">
       <label for="busca">Buscar animal</label>

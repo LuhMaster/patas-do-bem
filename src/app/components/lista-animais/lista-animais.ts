@@ -15,6 +15,15 @@ import { AnimaisService } from '../../services/animais';
 export class ListaAnimais {
   busca = '';
   filtroAtual = 'Todos';
+  escalaTexto = 1;
+
+aumentarTexto() {
+  this.escalaTexto = Math.min(1.5, this.escalaTexto + 0.1);
+}
+
+diminuirTexto() {
+  this.escalaTexto = Math.max(0.8, this.escalaTexto - 0.1);
+}
 
   constructor(private animaisService: AnimaisService) { }
 
