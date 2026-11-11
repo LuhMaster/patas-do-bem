@@ -1,6 +1,6 @@
 
 .cabecalho {
-  background: lightgray;
+  background: #E9C46A;
   color: black;
   padding: 24px 8%;
   display: flex;
@@ -54,10 +54,9 @@
 }
 
 
-/* Botão que abre e fecha o menu */
 .botao-menu {
   padding: 8px 14px;
-  background-color: #286344;
+  background-color: #037307;
   color: white;
   border: none;
   border-radius: 6px;

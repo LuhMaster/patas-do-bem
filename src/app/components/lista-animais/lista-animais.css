@@ -99,20 +99,63 @@ input:focus-visible {
   gap: 10px;
 }
 
+
 .botoes-filtro button {
   padding: 10px 16px;
-  border: 1px solid #286344;
+  border: 1px solid #d0d5dd;
   border-radius: 20px;
   background: white;
-  color: #286344;
+  color: #475467;
   cursor: pointer;
   font-weight: 600;
 }
 
-.botoes-filtro button.ativo {
-  background: #286344;
+
+.botoes-filtro .filtro-perdido {
+  color: #286344;
+  border-color: #fc1605;
+  background-color: #f28c8c;
+}
+
+.botoes-filtro .filtro-perdido.ativo {
+  background-color: #ff1605;
+  border-color: #b42318;
   color: white;
 }
+
+
+.botoes-filtro .filtro-encontrado {
+  color: #286344;
+  border-color: #84adff;
+  background-color: #bed3f3;
+}
+
+.botoes-filtro .filtro-encontrado.ativo {
+  background-color: #0693ff;
+  border-color: #175cd3;
+  color: white;
+}
+
+
+.botoes-filtro .filtro-adocao {
+  color: #067647;
+  border-color: #75d6a5;
+  background-color: #c2f3be;
+}
+
+.botoes-filtro .filtro-adocao.ativo {
+  background-color: #037c35;
+  border-color: #067647;
+  color: white;
+}
+
+
+.botoes-filtro .filtro-todos.ativo {
+  background-color: #286344;
+  border-color: #286344;
+  color: white;
+}
+
 
 .botoes-filtro button:focus-visible,
 .campo-busca input:focus-visible {

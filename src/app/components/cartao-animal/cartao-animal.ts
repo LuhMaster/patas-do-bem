@@ -40,6 +40,23 @@ export class CartaoAnimal {
     }
   }
 
+
+get classeFundo(): string {
+  const situacao = this.animal.situacao.toLowerCase().trim();
+
+  switch (situacao) {
+    case 'perdido':
+      return 'fundo-perdido';
+    case 'encontrado':
+      return 'fundo-encontrado';
+    case 'adoção':
+      return 'fundo-adocao';
+    default:
+      return 'fundo-padrao';
+  }
+}
+
+
   alternarDetalhes(): void {
     this.mostrarDetalhes = !this.mostrarDetalhes;
   }

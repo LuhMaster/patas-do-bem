@@ -269,6 +269,30 @@
   font-size: calc(0.75rem * var(--escala-texto, 1));
 }
 
+
+
+.animal.fundo-perdido {
+  background-color: #ffebea;
+  border-color: #f0a29c;
+}
+
+.animal.fundo-encontrado {
+  background-color: #e3f0ff;
+  border-color: #84adff;
+}
+
+.animal.fundo-adocao {
+  background-color: #e2f5e9;
+  border-color: #75d6a5;
+}
+
+
+.animal.fundo-padrao {
+  background-color: #ffffff;
+  border-color: #dce4dc;
+}
+
+
 @media (max-width: 480px) {
 
   .formulario-edicao {

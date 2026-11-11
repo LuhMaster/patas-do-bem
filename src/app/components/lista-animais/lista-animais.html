@@ -37,25 +37,43 @@
     </div>
 
     <div class="botoes-filtro">
-      <button type="button" (click)="filtrar('Todos')" [class.ativo]="filtroAtual === 'Todos'">
-        Todos
-      </button>
+      
+<button
+  type="button"
+  class="filtro-todos"
+  (click)="filtrar('Todos')"
+  [class.ativo]="filtroAtual === 'Todos'"
+>
+  Todos
+</button>
 
-      <button type="button" (click)="filtrar('Perdido')" [class.ativo]="filtroAtual === 'Perdido'">
-        Perdidos
-      </button>
+<button
+  type="button"
+  class="filtro-perdido"
+  (click)="filtrar('Perdido')"
+  [class.ativo]="filtroAtual === 'Perdido'"
+>
+  Perdidos
+</button>
 
-      <button
-        type="button"
-        (click)="filtrar('Encontrado')"
-        [class.ativo]="filtroAtual === 'Encontrado'"
-      >
-        Encontrados
-      </button>
+<button
+  type="button"
+  class="filtro-encontrado"
+  (click)="filtrar('Encontrado')"
+  [class.ativo]="filtroAtual === 'Encontrado'"
+>
+  Encontrados
+</button>
 
-      <button type="button" (click)="filtrar('Adoção')" [class.ativo]="filtroAtual === 'Adoção'">
-        Adoção
-      </button>
+<button
+  type="button"
+  class="filtro-adocao"
+  (click)="filtrar('Adoção')"
+  [class.ativo]="filtroAtual === 'Adoção'"
+>
+  Adoção
+</button>
+
     </div>
   </div>
 
