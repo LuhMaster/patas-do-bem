@@ -123,11 +123,12 @@ input:focus-visible {
 .acessibilidade {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
   color: #26352b;
   font-size: calc(14px * var(--escala-texto, 1));
+  Margin-top: 10px;
 }
 
 .acessibilidade button {

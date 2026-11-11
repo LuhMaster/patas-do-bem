@@ -1,24 +1,4 @@
 
-/*
-========================================
-Patas do Bem - Comandos úteis
-========================================
-
-Para iniciar o projeto Angular pelo terminal:
-
-cd C:\Users\IMPRESSAO01\patas-do-bem
-ng serve --open
-
-Endereço local:
-http://localhost:4200
-
-Para parar o servidor:
-Ctrl + C
-
-========================================
-*/
-
-/* Cabeçalho */
 .cabecalho {
   background: lightgray;
   color: black;
@@ -27,6 +7,7 @@ Ctrl + C
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  position: relative;
 }
 
 .identidade {
@@ -57,7 +38,6 @@ Ctrl + C
   line-height: 1.5;
 }
 
-/* Botão da área do voluntário */
 .botao-voluntario {
   padding: 8px 14px;
   background-color: darkgray;
@@ -73,7 +53,79 @@ Ctrl + C
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+
+/* Botão que abre e fecha o menu */
+.botao-menu {
+  padding: 8px 14px;
+  background-color: #286344;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.botao-menu:hover {
+  background-color: #1d4d34;
+}
+
+/* Menu de navegação */
+.menu-navegacao {
+  position: absolute;
+  top: 100%;
+  right: 8%;
+  z-index: 1000;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background-color: white;
+  border: 1px solid #d5e2d8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-navegacao a {
+  padding: 10px;
+  color: #26352b;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.menu-navegacao a:hover {
+  background-color: #e5f0e8;
+  color: #286344;
+}
+
 /* Ajustes para celular */
+@media (max-width: 600px) {
+  .cabecalho {
+    position: relative;
+  }
+
+ .botao-menu {
+  padding: 5px 10px;
+  background-color: #286344;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+  .menu-navegacao {
+    top: auto;
+    right: 16px;
+    left: 16px;
+    min-width: unset;
+  }
+}
+
+
 @media (max-width: 600px) {
   .cabecalho {
     flex-direction: column;
@@ -117,7 +169,13 @@ Ctrl + C
   }
 }
 
-/* Ajustes extras para celulares muito estreitos */
+.botao-menu {
+  align-self: flex-end;
+  font-size: 14px;
+  padding: 5px 9px;
+}
+
+
 @media (max-width: 360px) {
   .cabecalho {
     padding: 12px;

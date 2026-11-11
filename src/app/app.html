@@ -1,15 +1,15 @@
 
 <app-animacao-patinhas />
 
+<div class="pagina">
+  <app-cabecalho />
 
-@if (router.url === '/' || router.url === '') {
-  <div class="pagina">
-    <app-cabecalho />
+  @if (router.url === '/' || router.url === '') {
     <app-lista-animais />
-  </div>
-} @else {
-  <router-outlet />
-}
+  } @else {
+    <router-outlet />
+  }
+</div>
 
 <footer class="rodape">
   <p>© 2026 Patas do Bem — Proteção animal</p>

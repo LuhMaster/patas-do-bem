@@ -1,3 +1,4 @@
+
 <header class="cabecalho">
   <div class="identidade">
     <img src="/images/logo.png" alt="Logo Patas do Bem" class="logo" />
@@ -8,9 +9,43 @@
     </div>
   </div>
 
-  @if (autenticacaoService.estaLogado()) {
-    <button class="botao-voluntario" type="button" (click)="sair()">Sair</button>
-  } @else {
-    <button class="botao-voluntario" type="button" routerLink="/login">Área do voluntário</button>
+  <button
+    class="botao-menu"
+    type="button"
+    (click)="alternarMenu()"
+    [attr.aria-expanded]="menuAberto"
+    aria-label="Abrir ou fechar menu"
+  >
+    ☰ MENU
+  </button>
+
+  @if (menuAberto) {
+    <nav class="menu-navegacao" aria-label="Menu principal">
+
+      <a routerLink="/" (click)="fecharMenu()">Início</a>
+
+      <a routerLink="/" fragment="consulta" (click)="fecharMenu()">
+        Consultar animais
+      </a>
+
+      @if (autenticacaoService.estaLogado()) {
+        <a routerLink="/cadastro-animal" (click)="fecharMenu()">
+          Cadastrar animal
+        </a>
+
+        <button
+          class="botao-voluntario"
+          type="button"
+          (click)="sair()"
+        >
+          Sair
+        </button>
+      } @else {
+        <a routerLink="/login" (click)="fecharMenu()">
+          Área do voluntário
+        </a>
+      }
+
+    </nav>
   }
 </header>
